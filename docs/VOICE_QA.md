@@ -1,0 +1,17 @@
+# Local voice verification — 2026-10-14
+
+Packaged release selects `com.apple.voice.enhanced.en-IN.Rishi` (Rishi Enhanced). Downloaded the free 250.8 MB asset through Apple's macOS voice manager; installed size shown as 279.5 MB. Live Voicey Settings confirms Automatic uses Rishi (Enhanced). No remote synthesis, subscription, API key, or microphone recording in these checks.
+
+Eight native speech checks passed: installed voice, higher-quality preference, removed-voice fallback, Hindi selection, explicit choice, speed bounds, actual non-silent audio generation, and interruption/replacement callback ownership. Actual sample: `dist/Voicey-local-voice-preview.wav`. Human listening remains the quality acceptance check; non-silent audio is not proof of subjective naturalness.
+
+Full Swift fixtures passed zero failures, including legacy, 27 computer-use scenarios, communication and smart-agent fixtures. Native process/filesystem/model checks passed 13/13, including 30-second idle release. Embedded Whisper sample and constrained language-model inference/cancellation passed. Browser protocol 4/4, Chromium DOM fixture 14/14, native host IPC 6/6. Browser fixtures use intercepted pages, not authenticated live websites. Release build, bundle signature verification, and archive creation passed.
+
+The current packaged UI reports microphone permission not requested. Microphone and Input Monitoring permission need checking for the actual bundle; ad-hoc development signatures can invalidate earlier permissions. Full live microphone/physical-hotkey end-to-end acceptance remains open. WhatsApp real message reading/sending/watch activation remains unavailable. This build is ad-hoc signed, not Developer ID notarized. Optional external website workflows transmit authorized content to that website; speech and inference stay local.
+
+## Superseding delivery: Michael neural speech and onboarding
+
+The earlier macOS/Rishi selection is superseded. Michael is the default neural voice, with Heart/Bella/Emma/system selections persisted by speechVoice. Release self-test `/tmp/voicey-ready-neural.log` passes 12 native checks, zero failures. All four voices render in-process from bundled assets. Real reply service plays Michael without system fallback; interrupted completion belongs only to the replacement reply. British voice test initially found an unsupported en-gb language hint; removed it while preserving British lexicon and Emma embedding, then reran successfully. Native model cancellation/unload and four distinct valid audio waveforms pass. App about 426 MB; ZIP about 342 MB.
+
+Native Settings uses sidebar/grouped forms/resizable window. Activation goes straight to listening and no longer uses a greeting. First-run/repeatable Test Voicey walkthrough includes user-confirmed speaker, capture-only microphone transcript, actual physical shortcut reaching recording, actual local-model natural-language interpretation, and Calculator launched through normal command route. Skipped/unconfirmed checks do not pass.
+
+Live CUA inspection confirms Welcome to Voicey opens. The user immediately advanced to the microphone screen and initiated recording; screenshot shows Microphone Allowed and Listening. Leave this session for the user's acceptance checks. Do not mark microphone transcript, shortcut, or human speech-quality acceptance complete from this screenshot. Current build/signature/package passed; core suite zero failures from /tmp/voicey-michael-core.log.

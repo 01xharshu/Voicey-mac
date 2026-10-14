@@ -1,0 +1,35 @@
+# SwiftPM and generated native dependency/build output
+/.build/
+/.deps/
+/.swiftpm/
+/dist/
+
+# Local model weights (downloaded or imported separately)
+*.gguf
+*.bin
+
+# Node dependencies and browser-test output
+node_modules/
+playwright-report/
+test-results/
+
+# Python bytecode and local virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local environment configuration; keep example files available to commit
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# macOS and per-user Xcode state
+.DS_Store
+._*
+xcuserdata/
+*.xcuserstate
+
+# Local diagnostics
+*.log

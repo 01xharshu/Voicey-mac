@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Voicey Local Browser Bridge",
+  "version": "2.0.0",
+  "description": "Local semantic automation for explicitly requested ChatGPT and Gmail tasks.",
+  "permissions": ["nativeMessaging", "scripting", "storage"],
+  "optional_host_permissions": ["https://chatgpt.com/*", "https://mail.google.com/*"],
+  "background": {"service_worker": "worker.js", "type": "module"},
+  "action": {"default_popup": "setup.html"}
+}
